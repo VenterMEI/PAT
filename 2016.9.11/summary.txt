@@ -1,0 +1,28 @@
+桶的总结-1039. Course List for Student (25)
+标准name或id使用桶，桶空间的申请用vector而非deque，用多维数组而非一维，用scanf和printf而非cout和cin。
+一百万vector<int>的内存是24000kb，deque<int>占用内存将近是vector的30倍。
+上亿规模的cin或cout是不予许的。 
+
+读入一行-1040. Longest Symmetric String (25)
+cin和scanf是面向单词的，get和getline是面向行的。getline和get的使用需要头文件：string。
+get和getline读取一行，使用时，形如cin.get/getline(string str,int size)。读取一行，至换行符或读取size-1个字符后结束，末尾加'\0'结尾后赋给str。
+只能处理char str[]类型，不能处理 string类型。
+get()和getline()区别：get读到行末不处理换行符。getline读到行末读取换行符并丢弃。
+相对来说，getline更简单，get则便于检查。
+cin.get()==getchar()          cin.getline(string str,int size)==gets(s) 
+
+字符串处理：
+1.特殊情况：空字符串，一字符字符串。
+2.字符的对称性：分情况——奇偶——1040. Longest Symmetric String (25)
+
+
+DFS的回溯剪枝：p个数的指数k的和为n。sum[p]存储当前步数的和，st[p]存储当前步数的路径。如果得不到正确答案或者已不能得出比最优解更优的解，就回溯到上一步，继续遍历。
+BFS的分支界限：
+
+
+其它套路：
+1.对于按input顺序输出，可以开一个数组专门记录input的顺序。然后用这个数组做index遍历存的数据。——1041. Be Unique (20)
+2.long long 用%lld来I/O，double 用%lf来I/O。
+3.定义在mian外的（global）变量（包括结构体变量的成员）会自动初始化。
+4.scanf是不安全的，如%c会读回车符等，这时可以用%s来代替%c读。
+5alt+fn+f4  预览未打开的文件

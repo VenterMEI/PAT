@@ -1,0 +1,40 @@
+目录:
+STL容器_排序和I/O
+
+STL容器_排序和I/O：
+#include<iostream>
+#include<string>
+#include<algorithm>
+#include<deque>
+using namespace std;
+
+deque<string> ls;
+bool compare(string s1,string s2)
+{
+	string s3=s1+s2,s4=s2+s1;
+	if(s3<s4) 
+		return true;
+	else
+		return false;	
+} //另一种自定义排序方法是在struct中重新定义<,STL中的sort就是按<来的.
+sort(ls.begin(),ls.end(),compare);
+for(i=0;i<ls.size();i++)
+	for(j=0;j<ls[i].length();j++)
+	{
+		if(!is_zero)
+		{
+			if(ls[i][j]!='0')
+			{
+				is_zero=true;	
+				cout<<ls[i][j];
+			}
+		}
+		else
+			cout<<ls[i][j];
+	}//遍历
+
+
+string：printf/scanf string in STL
+In OJ，printf/scanf is faster than cout/cin when there is billions I/O. So, when you use 'string' type in code, how to I/O it by printf/scanf?
+You know, printf/scanf only support the standard type of C，while string doesn't belong to C and is different from char*.
+To resolve it, c_str may be helpful.
